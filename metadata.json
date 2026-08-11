@@ -1,0 +1,6 @@
+{
+  "name": "Ionic Hybrid Mobile App",
+  "description": "Production-ready Ionic Framework + React + Capacitor + PWA mobile application setup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
