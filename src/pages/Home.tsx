@@ -42,6 +42,7 @@ import {
 export const Home: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [lang, setLang] = useState<'EN' | 'BN'>('BN');
 
   const handleRefresh = (event: CustomEvent<RefresherEventDetail>) => {
     setTimeout(() => {
@@ -67,9 +68,17 @@ export const Home: React.FC = () => {
                 PROJECT_INIT.v1
               </IonTitle>
             </div>
-            <span className="px-2.5 py-0.5 bg-[#1E293B] text-[#3880FF] text-[10px] font-bold tracking-wider rounded-full border border-[#3880FF]/30 uppercase">
-              PWA READY
-            </span>
+            <div className="flex items-center space-x-2">
+              <span className="px-2.5 py-0.5 bg-[#1E293B] text-[#3880FF] text-[10px] font-bold tracking-wider rounded-full border border-[#3880FF]/30 uppercase">
+                PWA READY
+              </span>
+              <button
+                onClick={() => setLang(lang === 'EN' ? 'BN' : 'EN')}
+                className="px-2.5 py-0.5 bg-[#3880FF] text-white text-[10px] font-bold tracking-wider rounded-full hover:opacity-90 transition-opacity uppercase cursor-pointer"
+              >
+                {lang === 'EN' ? 'বাংলা' : 'ENGLISH'}
+              </button>
+            </div>
           </div>
         </IonToolbar>
       </IonHeader>
@@ -121,17 +130,17 @@ export const Home: React.FC = () => {
         {/* Bold Numbered Steps Section */}
         <div className="space-y-6 mb-8 bg-[#0F0F12] p-5 rounded-2xl border border-[#1E293B]">
           <h2 className="text-xs font-black uppercase tracking-widest text-[#3880FF] mb-2">
-            Architecture Blueprint
+            {lang === 'BN' ? 'আর্কিটেকচার ব্লুপ্রিন্ট' : 'Architecture Blueprint'}
           </h2>
 
           <div className="flex items-start space-x-4">
             <span className="text-3xl font-black text-[#1E293B] select-none">01</span>
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#F8FAFC]">
-                Project Setup
+                {lang === 'BN' ? 'প্রজেক্ট সেটআপ' : 'Project Setup'}
               </h3>
               <p className="text-xs text-[#94A3B8] mt-0.5">
-                Vite + React TS configured for strict-mode type safety.
+                {lang === 'BN' ? 'ভাইট + রিঅ্যাক্ট টাইপস্ক্রিপ্ট স্ট্রিক্ট-মোডে কনফিগার করা।' : 'Vite + React TS configured for strict-mode type safety.'}
               </p>
             </div>
           </div>
@@ -140,10 +149,10 @@ export const Home: React.FC = () => {
             <span className="text-3xl font-black text-[#1E293B] select-none">02</span>
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#F8FAFC]">
-                Native Bridge
+                {lang === 'BN' ? 'নেটিভ ব্রিজ' : 'Native Bridge'}
               </h3>
               <p className="text-xs text-[#94A3B8] mt-0.5">
-                Capacitor runtime integrated for Android and iOS builds.
+                {lang === 'BN' ? 'অ্যান্ড্রয়েড এবং আইওএস এর জন্য ক্যাপাসিটর রানটাইম সংযুক্ত।' : 'Capacitor runtime integrated for Android and iOS builds.'}
               </p>
             </div>
           </div>
@@ -152,10 +161,10 @@ export const Home: React.FC = () => {
             <span className="text-3xl font-black text-[#1E293B] select-none">03</span>
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#F8FAFC]">
-                CI/CD Pipelines
+                {lang === 'BN' ? 'সিআই/সিডি পাইপলাইন' : 'CI/CD Pipelines'}
               </h3>
               <p className="text-xs text-[#94A3B8] mt-0.5">
-                Automated Firebase deployment via GitHub Actions.
+                {lang === 'BN' ? 'গিটহাব অ্যাকশনস এর মাধ্যমে ফায়ারবেস অটোমেটিক ডিপ্লয়মেন্ট।' : 'Automated Firebase deployment via GitHub Actions.'}
               </p>
             </div>
           </div>
